@@ -17,6 +17,7 @@ def Sanitize(input_string):
 
 #if the input string is a palindrome add its time stamp as key to dictionary, 
 #return true if palindrome, else false
+#doesnt store duplicates in palindromes list but still returns true if palindrome
 class Palindrome(Resource):
 	def post(self, input_string):
 		newStr = Sanitize(input_string)
