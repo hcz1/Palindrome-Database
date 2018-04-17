@@ -37,11 +37,11 @@ class PalindromeList(Resource):
 		for key, value in ordered.items():
 			if i > 10:
 				break
-			i = i + 1
 			time_passed = epoch_time - TEN_MINUTES
 			if time_passed < key:
 				if value not in palindromeListReturn:
 					palindromeListReturn.append(value)
+					i = i + 1
 		return jsonify(palindromeListReturn)
 
 
