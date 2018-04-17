@@ -40,7 +40,8 @@ class PalindromeList(Resource):
 			i = i + 1
 			time_passed = epoch_time - TEN_MINUTES
 			if time_passed < key:
-				palindromeListReturn.append(value)
+				if value not in palindromeListReturn:
+					palindromeListReturn.append(value)
 		return jsonify(palindromeListReturn)
 
 
