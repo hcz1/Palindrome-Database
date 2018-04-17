@@ -1,8 +1,8 @@
 # Palindrome-Database
 
 ## Prerequisites
- - Python 3 
- - pip3
+ - Python  
+ - pip
  - flask
  - flask_restful
 
