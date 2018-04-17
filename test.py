@@ -22,7 +22,8 @@ class Palindrome(Resource):
 		newStr = Sanitize(input_string)
 		if newStr == newStr[::-1]:   
 			epoch_time = time.time()
-			palindromes[epoch_time] = newStr
+			if newStr not in palindromes.values():	
+				palindromes[epoch_time] = newStr
 		return jsonify(newStr == newStr[::-1])
 
 #order dictionary by order added then reverse for newest values. 
@@ -37,11 +38,10 @@ class PalindromeList(Resource):
 		for key, value in ordered.items():
 			if i > 10:
 				break
+			i = i + 1
 			time_passed = epoch_time - TEN_MINUTES
 			if time_passed < key:
-				if value not in palindromeListReturn:
-					palindromeListReturn.append(value)
-					i = i + 1
+				palindromeListReturn.append(value)		
 		return jsonify(palindromeListReturn)
 
 
